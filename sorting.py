@@ -2,19 +2,19 @@ def partition(array, low, high):
 
     pivot = array[high]
 
-    a = low -1
+    left = low -1
 
 
-    for b in range(low, high):
-        if array[b] <= pivot:
+    for right in range(low, high):
+        if array[right] <= pivot:
 
-            a = a+1
+            left = left+1
 
-            (array[a], array[b]) = (array[b], array[a])
+            (array[left], array[right]) = (array[right], array[left])
     
-    (array[a + 1], array[high]) = (array[high], array[a + 1])
+    (array[left + 1], array[high]) = (array[high], array[left + 1])
 
-    return a + 1
+    return left + 1
 
 def QuickSort(array, low, high):
     if low < high:
@@ -26,11 +26,11 @@ def QuickSort(array, low, high):
         QuickSort(array, pi+1, high)
 
 
-data = [4,2,7,3,1,9,6]
+data = [-2000, 0.5, 5000, 10]
 print("Unsorted Array : ", data)
 
 size = len(data)
 
-QuickSort(data, 0, size -1)
+QuickSort(data, 0, size - 1)
 
 print("Sorted Array in Assecnding Order : ", data)
