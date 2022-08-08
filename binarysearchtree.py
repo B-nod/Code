@@ -34,6 +34,22 @@ class TreeNode:
             
         return elements
 
+    def findval(self, val):
+
+        if val < self.data:
+            if self.left is None:
+                return str(val) + " Not Found"
+            return self.left.findval(val)
+        elif val > self.data:
+            if self.right is None:
+                return str(val) + " Not Found"
+            return self.right.findval(val)
+
+        else:
+            print(str(self.data) + " is found")
+
+
+
     
 root = TreeNode(27)
 root.add_child(15)
@@ -41,7 +57,10 @@ root.add_child(16)
 root.add_child(18)
 root.add_child(23)
 root.add_child(1)
+
 print(root.in_order_traversal(root))
+print(root.findval(7))
+print(root.findval(18))
 
 
 
