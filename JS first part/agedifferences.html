@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldest and Youngest ages difference</title>
+</head>
+<body>
+    <script>
+        
+        const input = [ { name: 'John', age: 13 }, { name: 'Mark', age: 56, }, { name: 'Rachel', age: 45, }, { name: 'Nate', age: 67, }, { name: 'Jeniffer', age: 65, } ];
+        
+        const ages = input.map(a => a.age)
+        
+        const family_age = ages.sort(function(a,b) {return a -b});
+        const shape = family_age.length;
+
+
+
+        const min_age = family_age[0];
+        const old_age = family_age[shape-1];
+
+        const dif_age = old_age - min_age;
+        
+
+        document.write("The Youngest age of the Family member is " + min_age + "<br>" + "<br>");
+        document.write("The Oldest age of the Family member is " + old_age + "<br>" + "<br>");
+        document.write("The difference age of the Family member is " + dif_age + "<br>");
+
+        
+    </script>
+</body>
+</html>

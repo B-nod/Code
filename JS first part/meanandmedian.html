@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mean And Median</title>
+</head>
+<body>
+    <script>
+
+
+        function mean(input, size) {
+            let sum = 0;
+            for ( let i = 0; i < size; i++) {
+                sum += input[i];
+            }
+            return sum/size;
+        }
+        
+        function median(input, size) {
+            
+            input.sort(function(a, b){return b - a});
+ 
+            if (size % 2 != 0) {
+                return input[size / 2];
+            }
+            else {
+                return (input[Math.floor((size-1)/2)] +
+                    input[size / 2]) / 2;
+            } 
+
+            
+        }
+
+        const input = [12, 46, 32, 64];
+        const size= input.length;
+
+        document.write("Mean of given input is " + mean(input, size) + "<br>");
+
+        document.write("Median of given input is " + median(input, size) + "<br>");
+    </script>
+</body>
+</html>
