@@ -28,19 +28,20 @@
             var roman = "";
 
             for (var key in romanToNum) {
-                document.write("key:", key, "<br>")
+                document.write("key:" + key + "<br>")
                 // console.log("value : ", romanToNum[key])
                 
                 while (num >= romanToNum[key]) {
                     roman += key;
                     num -= romanToNum[key];
-                    document.write("Num is decreased: ", num,"<br>")
+                    document.write("Num is decreased: " + num + "<br>")
                 }
             }
 
             return roman;
         }
 
+        
         document.write(convertToRoman(4));
     </script>
 </body>

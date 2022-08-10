@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldest and Youngest ages difference</title>
+</head>
+<body>
+    <script>
+        
+        function getMaxAge(ages){
+            return Math.max.apply(null, ages);
+        }
+        function getMinAge(ages){
+            return Math.min.apply(null, ages);
+        }
+        const ages=[42, 9, 11, 54, 32, 81];
+
+        const maxAge=getMaxAge(ages); 
+
+        const minAge=getMinAge(ages);
+
+        const diffAge = maxAge - minAge;
+
+        document.write("The oldest age of family members is " + maxAge + "<br>");
+
+        document.write("The youngest age of family members is " + minAge + "<br>");
+        
+        document.write("Age Differences is " + diffAge);
+    </script>
+</body>
+</html>

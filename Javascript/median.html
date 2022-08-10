@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Median</title>
+</head>
+<body>
+    <script>
+        function medianof2Arr(arr1) {
+            var concat = arr1;
+            concat = concat.sort(
+                function (a, b) { return a - b });
+    
+            console.log(concat);
+            var length = concat.length;
+    
+            if (length % 2 == 1) {
+    
+                // If length is odd
+                console.log(concat[(length / 2) - .5])
+                return concat[(length / 2) - .5]
+    
+            }
+            else {
+                console.log((concat[length / 2]
+                    + concat[(length / 2) - 1]) / 2);
+                    
+                return (concat[length / 2]
+                    + concat[(length / 2) - 1]) / 2;
+            }
+        }
+    
+        arr1 = [12, 46, 32, 64]
+        // const input = [12, 46, 32, 64];
+    
+        medianof2Arr(arr1)
+    </script>
+    
+</body>
+</html>

@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum of array</title>
+    <title>Sum of input</title>
 </head>
 <body>
     <script>
         
-        function sum(array) {
-            
+        function sum(result) {
+             
             let sum = 0;
-            for (let i = 0; i < array.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 
-                if(array[i] <= 0) {
-                    return 0;
-                }
-                else{
-                    sum += array[i];
-                }
-                
-                // sum += array[i];
+                sum += result[i];
             }
             return sum;
         }
-        let array = [3, 4, 5, 6, 7,-8, 9]
-        document.write("Sum of given array is "+ sum(array));
+
+        
+        const input = [ 1, -4, 12, 0, -3, 29, -150];
+        
+        const result = input.filter(checkNeg);
+
+        function checkNeg(input) {
+            return input >=0;
+        }
+
+
+        document.write(sum(result));
     </script>
 </body>
 </html>
