@@ -60,7 +60,7 @@ root.add_child(1)
 
 print(root.in_order_traversal(root))
 print(root.findval(7))
-print(root.findval(18))
+print(root.findval(1))
 
 
 
