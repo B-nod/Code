@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppercase</title>
+</head>
+<body>
+    <script>
+
+
+        function checkCase(string) {
+
+            if (!isNaN(string * 1)){
+                return 'ch is numeric';
+            }
+                else {
+                if (string[0] == string[0].toUpperCase()) {
+                    return 'upper case';
+                }
+                if (string[0] == string[0].toLowerCase()){
+                    return 'lower case';
+                }
+            }
+        }
+        document.write(checkCase('Apple'))
+        document.write(checkCase('ball'))
+    </script>
+</body>
+</html>

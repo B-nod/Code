@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ES6</title>
 </head>
+
 <body>
     <script>
         const companies = [ { name: "Company One", category: "Finance", start: 1981, end: 2004 }, { name: "Company Two", category: "Retail", start: 1992, end: 2008 }, { name: "Company Three", category: "Auto", start: 1999, end: 2007 }, { name: "Company Four", category: "Retail", start: 1989, end: 2010 }, { name: "Company Five", category: "Technology", start: 2009, end: 2014 }, { name: "Company Six", category: "Finance", start: 1987, end: 2010 }, { name: "Company Seven", category: "Auto", start: 1986, end: 1996 }, { name: "Company Eight", category: "Technology", start: 2011, end: 2016 }, { name: "Company Nine", category: "Retail", start: 1981, end: 1989 } ];
@@ -32,11 +33,113 @@
             
         });
 
-        // Exercise 3: get only the companies that have category Retail, increment their start by 1 and append in the DOM a div that has the name, the category, the start and the end in paragraphs elements
-
-
+        
+        
         
 
+        //Exercise 4:  sort the companies based on their end date in asceding order
+        document.write("<br><b>Four Number</b> <br> <br>")
+        const sortedAss = companies.sort(function(a,b) { return a.end - b.end});
+        companies.forEach(company => {
+            document.write(company.name + "<br> <br>");
+        });
+        
+        //Exercise 5: sort the ages array in desceding order
+        document.write("<br><b>Five Number</b> <br> <br>")
+        const sortedDesc = ages.sort(function(a , b) { return b - a});
+        document.write(`${sortedDesc} <br>`);
+
+        //Exercise 6: print the sum if you add all the ages using reduce
+        document.write("<br><b>Six Number</b> <br> <br>")
+        const sumAges = (ages) => {
+            return ages.reduce((previousAge, currentAge) => previousAge + currentAge,
+            0)
+        };
+        document.write("The sum of ages is : " + sumAges(ages) + "<br>");
+
+        //Exercise 7: make an new object that has the properties of name and category same as the companies[0] and a method print that prints out the name, use object destructuring and ES6 JS
+        document.write("<br><b>Seven Number</b> <br> <br>")
+        const newObject = (companies) => {
+            const {name, category} = companies[0];
+            const newCompany = {name, category};
+
+            const companyName = (newCompany) => {
+                return newCompany.name;
+            }
+
+            return companyName(newCompany);
+        };
+
+        document.write(newObject(companies) + "<br>" );
+
+        
+        //Exercise 8: create a funcion that takes an unkown number of arguments that are numbers and return their sum;
+        document.write("<br><b>Eight Number</b> <br> <br>")
+        const addNumber = (...args) => {
+            try {
+                const numbers = [...args];
+
+                const add = numbers.reduce((previousNumber, currentNumber) => previousNumber + currentNumber, 
+                0);
+                return add;
+            }
+            catch (err) {
+                return 'Pass a number';
+            }
+        };
+
+        document.write(addNumber(5,6,7,8,9) + "<br>" );
+
+        //Exercise 9: make a function that takes an unkown number of arguments of any type and adds them in an array and returns the array, if the argument is an array it should add it's values to the array that will be returned by the function
+        document.write("<br><b>Eight Number</b> <br> <br>")
+        const arrAdd = (...args) => {
+            const allArgs = [...args];
+            const flatArray = allArgs.flat();
+            return flatArray;
+        }
+
+        document.write(arrAdd(true, 3, [1, 5, 5], "Binod"));
+        
+        
+        //Exercise 10: distructure the property street in a variable named street from the object person
+        document.write("<br><b>Ten Number</b> <br> <br>")
+        const destructureProperty = (person) => {
+        const { street } = person.address;
+
+        return street;
+        
+        };
+        
+        document.write(destructureProperty(person) + "<br>" );
+
+        //Exercise 11: write a function that everytime you call it, it returns a number that increments starting from 0
+        document.write("<br><b>Eleven Number</b> <br> <br>")
+        let nub = 0;
+
+        const incrementNub = () => {
+            nub += 1;
+            return nub;
+        }
+        incrementNub();
+        incrementNub();
+        incrementNub();
+        document.write(nub + "<br>" );
+
+        //Exercise 12: create a function that distructures the query parameters of a url and adds them in an object as key value pairs and then returns the object
+        
+        const queryToObject = (query) => {
+        const obj = {};
+        const keyValueArray = query.split('&').map((keyValue) => keyValue.split('='));
+        keyValueArray.forEach(([k, v]) => {
+            return obj[k]
+            ? Array.isArray(obj[k])
+                ? obj[k].push(v)
+                : (obj[k] = [obj[k], v])
+            : (obj[k] = v);
+        });
+        return obj;
+        };
+        console.log(queryToObject('foo=bar&bar=baz&bar=bazz&foo=1&foo=2&zzz=aaa'));
     </script>
 </body>
 </html>

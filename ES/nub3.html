@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h4>Three Number</h4>
+    <p id="para"></p>
+
+    <script>
+
+        // Exercise 3: get only the companies that have category Retail, increment their start by 1 and append in the DOM a div that has the name, the category, the start and the end in paragraphs elements
+
+        
+        const companies = [ { name: "Company One", category: "Finance", start: 1981, end: 2004 }, { name: "Company Two", category: "Retail", start: 1992, end: 2008 }, { name: "Company Three", category: "Auto", start: 1999, end: 2007 }, { name: "Company Four", category: "Retail", start: 1989, end: 2010 }, { name: "Company Five", category: "Technology", start: 2009, end: 2014 }, { name: "Company Six", category: "Finance", start: 1987, end: 2010 }, { name: "Company Seven", category: "Auto", start: 1986, end: 1996 }, { name: "Company Eight", category: "Technology", start: 2011, end: 2016 }, { name: "Company Nine", category: "Retail", start: 1981, end: 1989 } ];
+
+        const retailComapies = companies.filter(
+        (company) => company.category === "Retail"
+        );
+        retailComapies.forEach(
+        (company) => (company.start = company.start + 1)
+        );
+
+        let newCompanies = "";
+        retailComapies.map((company) => {
+        newCompanies += `${company.name}, ${company.category}, ${company.start}, ${company.end} </br>`;
+        });
+
+        const paragraph = document.getElementById("para");
+        paragraph.innerHTML = newCompanies;
+
+    </script>
+</body>
+</html>
